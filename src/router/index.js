@@ -79,10 +79,24 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        meta: { title: '首页', icon: 'dashboard', affix: true }
       }
     ]
   },
+  {
+    path: '/barcode',
+    component: Layout,
+    redirect: '/barcode/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/barcode/index'),
+        name: 'barcode',
+        meta: { title: '二维码', icon: 'pdf' }
+      }
+    ]
+  },
+
   {
     path: '/documentation',
     component: Layout,
